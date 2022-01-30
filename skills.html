@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel='stylesheet' type='text/css' href='style/style.css'>
+        <link rel='shortcut icon' type='image/jpg' href='static/VFigure.jpg'/>
+        <title>Skills</title>
+        <meta name='author' content='Gareth'>
+        <meta name="description" content="I have not posted my projects on GITHUB yet">
+        <meta name="keywords" content='GKZY, portfolio, python, javascript, renpy, automation, snake, programming, about'>
+        <meta name="robots" content= ", follow">
+        <meta name="viewport" content="width=device-width, inital-scale=1.0, maximum-scale=1.0, user-scalable=0">
+        <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js"></script>
+        <script src="script/preloader.js"></script>
+        <script src="script/scrolling.js"></script>
+        <script src="script/animation.js"></script>
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-H6ST10QSZH"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'G-H6ST10QSZH');
+            function consoleText(words, id, colors) {
+                var visible = true;
+                var con = document.getElementById('console');
+                var letterCount = 1;
+                var x = 1;
+                var waiting = false;
+                var target = document.getElementById(id);
+                target.setAttribute('style', 'color:' + colors[0]);
+                window.setInterval(function() {
+                    if (letterCount === 0 && waiting === false) {
+                        waiting = true;
+                        target.innerHTML = words[0].substring(0, letterCount);
+                        window.setTimeout(function() {
+                            var usedColor = colors.shift();
+                            colors.push(usedColor);
+                            var usedWord = words.shift();
+                            words.push(usedWord);
+                            x = 1;
+                            target.setAttribute('style', 'color:' + colors[0])
+                            letterCount += x;
+                            waiting = false;
+                        }, 800)
+                    } else if (letterCount === words[0].length + 1 && waiting === false) {
+                        waiting = true;
+                        window.setTimeout(function() {
+                            x = -1;
+                            letterCount += x;
+                            waiting = false;
+                        }, 3000)
+                    } else if (waiting === false) {
+                        target.innerHTML = words[0].substring(0, letterCount)
+                        letterCount += x;
+                    }
+                }, 120)
+                window.setInterval(function() {
+                    if (visible === true) {
+                    con.className = 'console-underscore hidden'
+                    visible = false;
+
+                    } else {
+                    con.className = 'console-underscore'
+
+                    visible = true;
+                    }
+                }, 400)
+            }
+
+            console.log(`Am I destined to fail? If I am, it won't be that bad, right?`)
+
+            $(window).on('load', async function(){
+                disableScroll();
+                await move('loader');
+                $(".loader-wrapper").fadeOut('fast');
+                enableScroll();
+                consoleText(['Skills', 'Hello World.','Programming', 'Content Creation', 'Javascript', 'HTML5','CSS3', 'Python', 'Unity'], 'text',['#fff','#00fbff','#C82525', '#7CF0ED', '#F0FF03','#7C90F0','#33a7dd','#8453BA','#36F4CD']);
+            });
+        </script>
+        <style>
+            @import url(https://fonts.googleapis.com/css?family=Khula:700);
+
+            p{
+                font-size:15px;
+            }
+            .main-content{
+                line-height:1.2em;
+                width:80%;
+                margin:auto;
+            }
+            .hidden {
+                opacity:0;
+            }
+            .console-container {
+                font-family:Khula;
+                font-size:50px;
+                padding-top:50px;
+                padding-bottom:30px;
+            }
+            .console-underscore {
+                display:inline-block;
+                position:relative;
+                top:-0.14em;
+                left:10px;
+            }
+
+            .icons{
+                display:flex;
+                grid-auto-flow: column;
+                column-gap: 50px;
+            }
+
+            .item{
+                width:90px;
+                padding:10px;
+                border-radius:10px;
+            }
+
+            .cyan{
+                border: solid 2px #36F4CD
+            }
+
+            .lime{
+                border:solid 2px #1cff00;
+            }
+
+            .crimson{
+                border:solid 2px #C82525;
+            }
+
+            .icon-img{
+                height:50px;
+                padding-bottom:25px;
+                left: 50%;
+                top: 50%;
+                position: relative;
+                transform: translate(-50%, -50%);
+            }
+
+            .item-name{
+                text-align:center;
+                width:100%;
+                margin:auto;
+                line-height:1.2em;
+            }
+
+            .titleChar{
+                font-size:25px;
+                position:relative;
+                line-height:1.5em;
+            }
+            .item:hover > .item-name{
+                transform: scale(1.15);
+            }
+
+            .titleChar:hover {
+                position:relative;
+                bottom: 2px;
+                display: inline-block;
+                font-size:25px;
+            }
+            .crimsonText:hover{
+                color:#C82525;
+            }
+            .limeText:hover{
+                color:#1cff00;
+            }
+
+            .cyanText:hover{
+                color:#36F4CD
+            }
+            
+            a{
+                text-decoration: none;
+            }
+            #yt-channel{
+                text-decoration: underline;
+                color:#fafafa;
+            }
+
+            @media screen and (max-width: 700px){
+                .console-container {
+                    font-size:40px;
+                }
+                .icon-img{
+                    height:30px;
+                }
+
+                .icons{
+                    display:grid;
+                    grid-template-columns: 1fr 1fr;
+                    grid-auto-flow: unset;
+                    row-gap: 10px;
+                }
+
+                .main-content{
+                    width:95%;
+                }
+            }
+            @media screen and (max-width: 400px) {
+                .console-container {
+                    font-size:32px;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <nav>
+            <ul>
+                <li><a href='./homepage.html'>Home</a></li>
+                <li><a href='./about.html'>About</a></li>
+                <li><a href class='active'>Skills</a></li>
+                <li><a href='./project.html'>Projects</a></li>
+            </ul>
+        </nav>
+        <div class='main-content'>
+            <div class='console-container'><span id='text'></span><div class='console-underscore' id='console'>&#95;</div></div>
+            <section id='Programming'>
+                <h2>
+                    <span class='titleChar limeText'>P</span
+                    ><span class='titleChar limeText'>R</span
+                    ><span class='titleChar limeText'>O</span
+                    ><span class='titleChar limeText'>G</span
+                    ><span class='titleChar limeText'>R</span
+                    ><span class='titleChar limeText'>A</span
+                    ><span class='titleChar limeText'>M</span
+                    ><span class='titleChar limeText'>M</span
+                    ><span class='titleChar limeText'>I</span
+                    ><span class='titleChar limeText'>N</span
+                    ><span class='titleChar limeText'>G</span
+                    >
+                </h2>
+                <p style='width:90%;line-height: 1.5em;'>
+                    For programming, I probably say I use Python for most of the time.
+                    Well actually, it's everytime when I program something. I also used Unity and C# to create
+                    a ball game that I made and I'm still on the ropes of learning those two. Besides that,
+                    I've used HTML, CSS and Javascript to create this. Took me a few days or weeks to create this
+                    website with some references.
+                    <br><br>
+                    If you want take a look at what I made, you can head to the Projects section. You might not find
+                    all of them to be quite spectacular as you, the reader reading this, may have created something far
+                    better than mine.
+                </p>
+                <h2>
+                    <span class='titleChar crimsonText'>C</span
+                    ><span class='titleChar crimsonText'>O</span
+                    ><span class='titleChar crimsonText'>N</span
+                    ><span class='titleChar crimsonText'>T</span
+                    ><span class='titleChar crimsonText'>E</span
+                    ><span class='titleChar crimsonText'>N</span
+                    ><span class='titleChar crimsonText'>T</span
+                    ><span> </span
+                    ><span class='titleChar crimsonText'>C</span
+                    ><span class='titleChar crimsonText'>R</span
+                    ><span class='titleChar crimsonText'>E</span
+                    ><span class='titleChar crimsonText'>A</span
+                    ><span class='titleChar crimsonText'>T</span
+                    ><span class='titleChar crimsonText'>I</span
+                    ><span class='titleChar crimsonText'>O</span
+                    ><span class='titleChar crimsonText'>N</span
+                    >
+                </h2>
+                <p style='width:70%;line-height: 1.5em;'>
+                    I have made some YouTube videos back when I was 13. Yes, you can find
+                    my old videos from way back and up until now, my videos are still cringe.
+                    The reason why I did it back then was because of being viral but now when I
+                    looked back at it, I realised that was a foolish mindset to go with and so,
+                    I made PESCM videos and that is when my channel blew up to 1.02k subscribers.
+                    That was when I felt a bit more passion on creating YouTube videos and that's also
+                    when I started getting addicted to football tactics and that was the only game that has
+                    more realistic movements. Ever since PESCM is gone,
+                    I have decided to make skits and stream Genshin for my own fun. Skits were on
+                    a hold for now because I can't think of any ideas that is original and not cringe.
+                    This made me wonder what other content I should make besides doing the other two.
+                    To be honest, I'm not sure what is going on with my mind.
+                    <br><br>
+                    When I stream, I mainly use a mobile app called streamchamp. I got my first laptop
+                    when I was 17, the year when I finished my IGCSE. For the past 5 years, I've been making
+                    YouTube videos using only an iPad and I'm still used to creating videos on my iPad. There
+                    was a time where I streamed using my laptop. It was working but I'm not used to playing in
+                    my laptop yet. The moment when I streamed on my computer, I used OBS to switch scenes, adjust
+                    the audio. As for extensions, I haven't used them yet.
+                    <br><br>
+                    Go to my <a id='yt-channel' target="_blank" href='https://www.youtube.com/channel/UCWc1bV_lcL4fOTqN8dys2Eg'>YouTube channel</a> if
+                    you would like to see some of my videos (cringe warning)
+                    </p>
+                    <h2>
+                        <span class='titleChar limeText'>I</span
+                        ><span class='titleChar limeText'>N</span
+                        ><span class='titleChar limeText'>T</span
+                        ><span class='titleChar limeText'>E</span
+                        ><span class='titleChar limeText'>R</span
+                        ><span class='titleChar limeText'>N</span
+                        ><span class='titleChar limeText'>S</span
+                        ><span class='titleChar limeText'>H</span
+                        ><span class='titleChar limeText'>I</span
+                        ><span class='titleChar limeText'>P</span
+                        ><span class='titleChar limeText'>S</span
+                        >
+                    </h2>
+                    <p>
+                        I have been an EdTech officer at my school
+                        (more to come soon...)
+                    </p>
+                    <h2>
+                        <span class='titleChar limeText'>L</span
+                        ><span class='titleChar limeText'>A</span
+                        ><span class='titleChar limeText'>N</span
+                        ><span class='titleChar limeText'>G</span
+                        ><span class='titleChar limeText'>U</span
+                        ><span class='titleChar limeText'>A</span
+                        ><span class='titleChar limeText'>G</span
+                        ><span class='titleChar limeText'>E</span
+                        ><span class='titleChar limeText'>S</span
+                        ><span> </span
+                        ><span class='titleChar limeText'>L</span
+                        ><span class='titleChar limeText'>E</span
+                        ><span class='titleChar limeText'>A</span
+                        ><span class='titleChar limeText'>R</span
+                        ><span class='titleChar limeText'>N</span
+                        ><span class='titleChar limeText'>T</span
+                        >
+                    </h2>
+                    <div class="icons">
+                        <div class="lime item">
+                            <img class="icon-img" src="static/images/python.png">
+                            <div class="item-name">Python</div>
+                        </div>
+                        <div class="crimson item">
+                            <img class="icon-img" src="static/images/C sharp.png">
+                            <div class="item-name">C#</div>
+                        </div>
+                        <div class="cyan item">
+                            <img class="icon-img" src="static/images/javascript.png">
+                            <div class="item-name">Javascript</div>
+                        </div>
+                        <div class="cyan item">
+                            <img class="icon-img" src="static/images/html5.png">
+                            <div class="item-name">HTML</div>
+                        </div>
+                        <div class="cyan item">
+                            <img class="icon-img" src="static/images/css3.png">
+                            <div class="item-name">CSS</div>
+                        </div>
+                        <p>More to come soon if I learnt more languages I guess...</p>
+                    </div>
+                    <h2>
+                        <span class='titleChar cyanText'>L</span
+                        ><span class='titleChar cyanText'>I</span
+                        ><span class='titleChar cyanText'>B</span
+                        ><span class='titleChar cyanText'>R</span
+                        ><span class='titleChar cyanText'>A</span
+                        ><span class='titleChar cyanText'>R</span
+                        ><span class='titleChar cyanText'>I</span
+                        ><span class='titleChar cyanText'>E</span
+                        ><span class='titleChar cyanText'>S</span
+                        ><span> </span
+                        ><span class='titleChar cyanText'>L</span
+                        ><span class='titleChar cyanText'>E</span
+                        ><span class='titleChar cyanText'>A</span
+                        ><span class='titleChar cyanText'>R</span
+                        ><span class='titleChar cyanText'>N</span
+                        ><span class='titleChar cyanText'>T</span
+                        >
+                    </h2>
+                    <div class="icons">
+                        <div class="lime item">
+                            <img class="icon-img" src="static/images/OpenCV.png">
+                            <div class="item name">open cv</div>
+                        </div>
+                        <div class="cyan item">
+                            <img class="icon-img" src="static/images/p5.png">
+                            <div class="item name">p5.js</div>
+                        </div>
+                        <p>More to come soon I guess...</p>
+                    </div>
+                    <h2>
+                        <span class='titleChar cyanText'>T</span
+                        ><span class='titleChar cyanText'>O</span
+                        ><span class='titleChar cyanText'>O</span
+                        ><span class='titleChar cyanText'>L</span
+                        ><span class='titleChar cyanText'>S</span
+                        ><span> </span>
+                        <span class='titleChar cyanText'>U</span
+                        ><span class='titleChar cyanText'>S</span
+                        ><span class='titleChar cyanText'>E</span
+                        ><span class='titleChar cyanText'>D</span
+                        >
+                    </h2>
+                    <div class="icons">
+                        <div class="lime item">
+                            <img class="icon-img" src="static/images/Unity.png">
+                            <div class="item name">Unity</div>
+                        </div>
+                        <div class="cyan item">
+                            <img class="icon-img" src="static/images/VScode.png">
+                            <div class="item name">Visual Studio Code</div>
+                        </div>
+                        <p>More to come soon I guess...</p>
+                    </div>
+                    <h2>
+                        <span class='titleChar cyanText'>T</span
+                        ><span class='titleChar cyanText'>O</span
+                        ><span class='titleChar cyanText'>O</span
+                        ><span class='titleChar cyanText'>L</span
+                        ><span class='titleChar cyanText'>S</span
+                        ><span> </span>
+                        <span class='titleChar cyanText'>U</span
+                        ><span class='titleChar cyanText'>S</span                           
+                        ><span class='titleChar cyanText'>E</span
+                        ><span class='titleChar cyanText'>D</span
+                        ><span> </span
+                        ><span class='titleChar cyanText'>F</span
+                        ><span class='titleChar cyanText'>O</span
+                        ><span class='titleChar cyanText'>R</span
+                        ><span> </span
+                        ><span class='titlechar cyanText'>E</span
+                        ><span class='titlechar cyanText'>D</span
+                        ><span class='titlechar cyanText'>I</span
+                        ><span class='titlechar cyanText'>T</span
+                        ><span class='titlechar cyanText'>I</span
+                        ><span class='titlechar cyanText'>N</span
+                        ><span class='titlechar cyanText'>G</span
+                        >
+                    </h2>
+                    <div class="icons">
+                        <div class="lime item">
+                            <img class="icon-img" src="static/images/Davinci.png">
+                            <div class="item name">Da Vinci Resolve</div>
+                        </div>
+                        <div class="cyan item">
+                            <img class="icon-img" src="static/images/OBS.png">
+                            <div class="item name">OBS</div>
+                        </div>
+                        <p>More to come soon I guess...</p>
+                    </div>
+            </section>
+        </div>
+        <div class="loader-wrapper">
+            <img src='static/VFigure.jpg' class='loader-image'>
+            <span class="loader"><span class="loader-inner" id='loader'></span></span>
+        </div>
+    </body>
+</html>

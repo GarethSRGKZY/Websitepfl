@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel='stylesheet' type='text/css' href='style/style.css'>
+        <link rel='shortcut icon' type='image/jpg' href='static/logo.jpg'/>
+        <meta name='author' content='GKZY'>
+        <meta name='description' content='info and background about myself'/>
+        <meta name='keywords' content='GKZY, portfolio, python, javascript, renpy, automation, snake, programming, about'>
+        <meta name='robots' content=', follow'>
+        <script src='https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js'></script>
+        <script src='script/contact.js'></script>
+        <script src='script/preloader.js'></script>
+        <script src='script/scrolling.js'></script>
+        <script async src='https://www.googletagmanager.com/gtag/js?id=G-H6ST10QSZH'></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'G-H6ST10QSZH');
+            window.onbeforeunload = function(){
+                window.scrollTo(0,0);
+            }
+            $(window).on('load', async function(){
+                disableScroll();
+                await move('loader');
+                let date = new Date();
+                let year = date.getFullYear();
+                let age = (year) - 2004;
+
+                document.getElementById('age').innerText = age;
+                $(".loader-wrapper").fadeOut('slow');
+                enableScroll();
+            });
+        </script>
+        <title>About</title>
+        <style>
+            input[type=text], select, textarea{
+                width: 100%;
+                padding: 12px;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+                box-sizing: border-box;
+                margin-top: 6px;
+                margin-bottom: 16px;
+                resize: vertical;
+                background-color: #f1f1f1;
+            }
+
+            input[type=submit]{
+                background-color: #1313F6;
+                color: black;
+                padding: 12px 20px;
+                border: none;
+                border-radius: 4px;
+                cursor: pointer;
+            }
+
+            input[type=submit]:hover{
+                background-color: #0D0DAF;
+            }
+
+            input{
+                font-family: 'montserrat';
+            }
+
+            .container{
+                color: #ccc;
+                font-family: 'montserrat';
+            }
+
+            .card{
+                line-height:15px;
+                padding-left:15px;
+                width:80%;
+            }
+        </style>
+    </head>
+    <body>
+        <nav>
+            <ul>
+                <li><a href='./homepage.html'>Home</a></li>
+                <li><a href='./about.html'>About</a></li>
+                <li><a href='./skills.html'>Skills</a></li>
+                <li><a href='./project.html'>Project</a></li>
+            </ul>
+        </nav>
+        <br><br>
+        <div class='card' style='padding-left:60px'>
+            <img src='static/VFigure.jpg' style='width:300px;border:3px solid #f1f1f1;'>
+            <h1>I'm Gareth. How are you? </h1>
+            <br>
+            <p style='font-family: montserrat;;'>
+                This year, I am <span id='age'></span> and I live in the Asia continent. I have a few hobbies such as programming, gaming, playing sports etc.
+                <br><br>
+                <h2>Subjects:</h2>
+                My main subjects that I take for A level are Mathematics, Further Mathematics, Computer Science and Physics. The reason why I chose these subjects
+                is because I have some courses that I want to do in the future and I'm always crippled with indecision everytime when there's a dilemma that I think
+                all choices could benefit me. 
+                <br><br>
+                <h3>A LEVEL GRADES:</h3>
+                <br>
+                - Further Maths(A2): TBA
+                <br>
+                - Mathematics(A2): TBA (A for mocks)
+                <br>
+                - Physics(AS): TBA(B for mocks)
+                <br>
+                - Computer science(AS): TBA (A for mocks)
+                <br>
+                *It's very terrible tbh
+                <br><br>
+                <h2>Music:</h2>
+                I play the violin currently and I'm below average in my opinion. I produce
+                rap music and instrumentals from the various genre of songs I listen to such as
+                rap, acoustic and J-Pop to rock. These days, I usually listen to J-Pop to rock.
+                <br><br> My favourite artists include Mafumafu, NF, Aimer, Eve, Kenshi Yonezu and Kalafina etc.
+                <br><br>
+                <h2>Games:</h2>
+                Usually, I play Genshin Impact, Honkai Impact, Tears of Themis, Chess, PES and some football managerial games.
+                Yes, just by looking at some games, I know I'm a weeb and no, I don't have any gambling addiction as I don't pay to get what I want.
+                <br><br>
+                <h2>Additional Info:</h2>
+                <br>
+                STEM Project
+                <br><br>
+                <h2>Contact me:</h2>
+                <div class="container" style="width:80%; position:absolute;">
+                <form action="https://formspree.io/f/mnqwnroo" method="POST">
+                    
+                <label for="name">Name<span style='color:red'></span></label>
+                <input type="text" name="name" class="name" placeholder="Name">
+                
+                <label for="Email">Email<span style='color:red'></span></label>
+                <input type="text" name="Email" class="Email" placeholder="Email">
+
+                <label for="subject">Subject<span style='color:red'></span></label>
+                <input type="text" name="subject" class="subject" placeholder="Subject">
+
+                <label for="Message">Message for Gareth<span style='color:red'></label>
+                <textarea type='text' name='Message' class="Message" placeholder="Write something..." style="height:200px;font-family:montserrat"></textarea>
+
+                <input type="submit" value="Submit" class="submit" style='color:white;'>
+                <br><br>
+                <div class='status' style='color:red;font-size:smaller'></div>
+                </form>
+                </div>         
+            </p>
+        </div>
+        <br>
+        <div class="loader-wrapper">
+            <img src='static/VFigure.jpg' class='loader-image'>
+            <span class="loader"><span class="loader-inner" id='loader'></span></span>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <link rel='stylesheet' type='text/css' href='style/style.css'>
+        <link rel="shortcut icon" type="image/jpg" href="static/VFigure.jpg"/>
+        <title>GKZY's Portfolio</title>
+        <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js'></script>
+        <script src="https://cdn.jsdelivr.net/npm/p5@1.1.9/lib/p5.min.js"></script>
+        <script src="static/sketch.js"></script>
+        <script src="static/snake.js"></script>
+        <script src="script/preloader.js"></script>
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-H6ST10QSZH"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments)}
+            gtag('js',new Date());
+
+            gtag('config','G-H6ST10QSZH');
+            window.onbeforerunload = function (){
+                window.scrollTo(0,0);
+            }
+            $(window).on('load',async function(){
+                await move('loader');
+                $(".loader-wrapper").fadeOut('fast');
+            })
+        </script>
+        <meta name='author' content="Gareth">
+        <meta name='description' content='info and background about myself'/>
+        <meta name='keywords' content='GKZY, portfolio, python, javascript, renpy, automation, snake, programming, about'>
+        <meta name='robots' content=', follow'>
+        <style>
+            canvas{
+                padding-left: 0;
+                padding-right: 0;
+                margin-left: auto;
+                margin-right: auto;
+                display: block;
+                overflow:hidden;
+                position:absolute;
+                width:100%;
+                height:100%;
+                background-color: aqua;
+            }
+            button{
+                z-index:3;
+                position:absolute;
+                background-color: #12b0b6ce;
+                color:#909090;
+                border:1px solid #505050;
+                background: rgb(27, 9, 124); /* Fallback for older browsers without RGBA-support */
+                background: rgba(29, 12, 139, 0.664);
+                outline:none;
+            }
+            
+        </style>
+    </head>
+    <body oncontextmenu="return false">
+        <div class="menuItems">
+            <nav>
+                <ul>
+                    <li><a href='active'>Home</a></li>
+                    <li><a href='./about.html'>About</a></li>
+                    <li><a href='./skills.html'>Skills</a></li>
+                    <li><a href='./project.html'>Project</a></li>
+                </ul>
+            </nav>
+        </div>
+
+        <div class="loader-wrapper">
+            <img src="static/VFigure.jpg" class="loader-image">
+            <span class="loader"><span class="loader-inner" id='loader'></span>
+        </div>
+    </body>
+</html>

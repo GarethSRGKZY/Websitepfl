@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href='style/style.css'>
+        <link rel="shortcut icon" type="image/jpg" href="static/VFigure.jpg"/>
+        <meta name="author" content="Gareth">
+        <meta name="description" content="I have not posted my projects on GITHUB yet">
+        <meta name="keywords" content='GKZY, portfolio, python, javascript, renpy, automation, snake, programming, about'>
+        <meta name="robots" content= ", follow">
+        <script src='https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js'></script>
+        <script src="script/preloader.js"></script>
+        <script src="script/scrolling.js"></script>
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-H6ST10QSZH"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'G-H6ST10QSZH');
+            window.onbeforeunload = function () {
+                window.scrollTo(0, 0);
+            }
+
+            $(window).on('load', async function(){
+                disableScroll();
+                await move('loader');
+                $(".loader-wrapper").fadeOut('slow');
+            });
+
+            $(window).click( async function() {
+                enableScroll();
+                $('#clickToContinue').fadeOut('fast');
+            });
+        </script>
+        <title>Projects</title>
+        <style>
+            #clickToContinue{
+                display:flex;
+                position:fixed;
+                background-color:#1257A6;
+                color:#fafafa;
+                width:100%;
+                height:100%;
+                z-index:3;
+                opacity:0.95;
+                margin: 0 auto;
+            }
+            #click-text{
+                top:40%;
+                left:50%;
+                transform: translate(-50%, -50%);
+                font-family:'Default_SC';
+                font-size:40px;
+                position:absolute;
+            }
+
+            .project-box {
+                position:relative;
+                width:470px;
+                margin: 0 auto;
+                border: 2px solid #fafafa;
+                border-radius:5px;
+                color:#fafafa;
+                background-color: #0B335A;
+                padding-left:15px;
+                padding-right:15px;
+            }
+
+            .project-section{
+                display: grid;
+                grid-column: 2;
+                grid-template-columns: 1fr 1fr;
+                row-gap:50px;
+                margin: auto;
+                width:90%;
+            }
+
+            .project-icon{
+                width:450px; 
+                position:relative;
+                border-radius:10px;
+                overflow: hidden; 
+                display:block;
+                margin:auto;
+            }
+            .project-description{
+                width:100%;
+                padding-left:10px;
+            }
+
+            #tags{
+                position: absolute;
+                bottom:5px;
+                height:25px;
+                padding-left:10px;
+            }
+
+            .tag{
+                font-size:12px;
+                border:solid 2px #fafafa;
+                padding:5px;
+                border-radius:10px;
+            }
+
+            .tag:hover{
+                background-color:#0B335A;
+                color:#303030;
+            }
+
+            @media screen and (max-width: 800px) {
+                .project-section {
+                    grid-template-columns: 1fr;
+                }
+            }
+        </style>
+    </head>
+    <body oncontextmenu="return false;">
+        <div id='clickToContinue'>
+            <div id='click-text'>Click here to continue</div>
+        </div>
+        <nav>
+            <ul>
+                <li><a href='./homepage.html'>Home</a></li>
+                <li><a href='./about.html'>About</a></li>
+                <li><a href='./skills.html'>Skills</a></li>
+                <li><a href class='active'>Projects</a></li>
+            </ul>
+        </nav>
+        <div class='project-section'>
+            <div class="project-box">
+                <h4>Motion Detection Camera</h4>
+                <a href="https://github.com/GarethSRGKZY/Motion-detection-camera" target="blank">
+                    <video onmouseover="this.play()" onmouseout="this.pause();this.currentTime=0;" class="project-icon">
+                        <source src='static/video/Camera.mov'>
+                    </video>
+                </a>
+                <p class='project-description'>
+                    From my POV, when I did this, kind of feels like what intermediate level
+                    programmers would create. It uses CV2 to capture the video and has functions
+                    that will detect movement by creating a sqaure box around it. Only detects
+                    big movements at a certain range e.g. waving your hand, moving your head etc.
+                    You may probably think that I am copying but this is what I have learnt.
+                </p>
+                <br><br>
+                <div id='tags'>
+                    <span class='tag'>Python</span>
+                    <span class='tag'>OpenCV</span>
+                </div>
+            </div>
+            
+            <div class="project-box">
+                <h4>Ball game</h4>
+                    <video onmouseover="this.play()" onmouseout="this.pause();this.currentTime=0;" class="project-icon">
+                        <source src='static/video/Ball.mov'>
+                    </video>
+                </a>
+                <p class='project-description'>
+                    This was my first ever game that I have created in Unity. It has a camera that
+                    can follow the player around but I think it needs to be edited as when you rotate the camera,
+                    it won't switch the arrow keys. I'm not sure how to provide the link for this one. If it's 
+                    marketed, it'll probably get low reviews as there is a higher demand every time time flies7
+                </p>
+                <br><br>
+                <div id='tags'>
+                    <span class='tag'>Unity</span>
+                    <span class='tag'>C#</span>
+                </div>
+            </div>
+            <div class="project-box">
+                <h4>Kara No Kyoukai fan game</h4>
+                    <video onmouseover="this.play()" onmouseout="this.pause();this.currentTime=0;" class="project-icon">
+                        <source src='static/video/KNKFuukanFuukei.mov'>
+                    </video>
+                </a>
+                <p class='project-description'>
+                    This was created using Ren'py and I am not sure whether this language is linked with Python. 
+                    I wanted to create this since the company did not create a VN(Visual Novel) of this story. 
+                    I thought why not create a VN of this? For your information, this is a personal project and not going 
+                    to be released online as there is a copyright issue if it was posted. The whole thing is still a work in progress.
+                </p>
+                <br><br>
+                <div id='tags'>
+                    <span class='tag'>Ren'py</span>
+                </div>
+            </div>
+        </div>
+        <div class="loader-wrapper">
+            <img src='static/VFigure.jpg' class='loader-image'>
+            <span class="loader"><span class="loader-inner" id='loader'></span></span>
+        </div>
+    </body>
+</html>
