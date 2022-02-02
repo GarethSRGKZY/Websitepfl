@@ -74,6 +74,21 @@
                 padding-left:15px;
                 width:80%;
             }
+
+            #pfp{
+                width:300px;
+                border:3px solid #fafafa;
+                border-radius:20px;
+            }
+
+            @media screen and (max-width: 700px){
+                .card{
+                    width:95%;
+                }
+                #pfp{
+                    width:280px;
+                }
+            }
         </style>
     </head>
     <body>
@@ -87,7 +102,7 @@
         </nav>
         <br><br>
         <div class='card' style='padding-left:60px'>
-            <img src='static/VFigure.jpg' style='width:300px;border:3px solid #f1f1f1;'>
+            <img src='static/VFigure.jpg' id='pfp'>
             <h1>I'm Gareth. How are you? </h1>
             <br>
             <p style='font-family: montserrat;;'>
@@ -128,16 +143,16 @@
                 <div class="container" style="width:80%; position:absolute;">
                 <form action="https://formspree.io/f/mnqwnroo" method="POST">
                     
-                <label for="name">Name<span style='color:red'></span></label>
+                <label for="name">Name<span style='color:red'>*</span></label>
                 <input type="text" name="name" class="name" placeholder="Name">
                 
-                <label for="Email">Email<span style='color:red'></span></label>
+                <label for="Email">Email<span style='color:red'>*</span></label>
                 <input type="text" name="Email" class="Email" placeholder="Email">
 
                 <label for="subject">Subject<span style='color:red'></span></label>
                 <input type="text" name="subject" class="subject" placeholder="Subject">
 
-                <label for="Message">Message for Gareth<span style='color:red'></label>
+                <label for="Message">Message for Gareth<span style='color:red'>*</label>
                 <textarea type='text' name='Message' class="Message" placeholder="Write something..." style="height:200px;font-family:montserrat"></textarea>
 
                 <input type="submit" value="Submit" class="submit" style='color:white;'>
