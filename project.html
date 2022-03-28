@@ -9,13 +9,14 @@
         <meta name="robots" content= ", follow">
         <script src='https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js'></script>
         <script src="script/preloader.js"></script>
-        <script src="script/scrolling.js"></script><script async src="https://www.googletagmanager.com/gtag/js?id=G-BZV0Y616GM"></script>
+        <script src="script/scrolling.js"></script>
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-H6ST10QSZH"></script>
         <script>
             window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments)}
-            gtag('js',new Date());
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
 
-            gtag('config', 'G-BZV0Y616GM');
+            gtag('config', 'G-H6ST10QSZH');
             window.onbeforeunload = function () {
                 window.scrollTo(0, 0);
             }
@@ -157,7 +158,7 @@
                     This was my first ever game that I have created in Unity. It has a camera that
                     can follow the player around but I think it needs to be edited as when you rotate the camera,
                     it won't switch the arrow keys. I'm not sure how to provide the link for this one. If it's 
-                    marketed, it'll probably get low reviews as there is a higher demand every time time flies.
+                    marketed, it'll probably get low reviews as there is a higher demand every time time flies7
                 </p>
                 <br><br>
                 <div id='tags'>
@@ -165,6 +166,27 @@
                     <span class='tag'>C#</span>
                 </div>
             </div>
+
+            <div class="project-box">
+                <h4>A bugged wordle</h4>
+                    <video onmouseover="this.play()" onmouseout="this.pause();this.currentTime=0;"class="project-icon">
+                         <source src="static/video/wordle.mov">
+                    </video>
+                </a>
+                <p class="project-description">
+                    Ever since the wordle craze started, I played wordle for a while and got hooked onto it a few days later.
+                    It was around a 1-2 months later that I decided to make a wordle. This wordle uses pygame for the GUI and
+                    the functions. Unfortunately, there are a few problems with this wordle. After the first word is inputted,
+                    the next word that will be typed overlaps the inital word. Next is the backspace where you cannot undo
+                    the word you typed. Once input, no going back. Some people may say that this is not a bug, it's a feature.
+                </p>
+                <br><br>
+                <div id = 'tags'>
+                    <span class="tag">Pygame</span>
+                    <span class="tag">Python</span>
+                </div>
+            </div>
+
             <div class="project-box">
                 <h4>Kara No Kyoukai fan game</h4>
                     <video onmouseover="this.play()" onmouseout="this.pause();this.currentTime=0;" class="project-icon">
