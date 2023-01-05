@@ -1,97 +1,123 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <link rel='stylesheet' type='text/css' href='style/style.css'>
-        <link rel='shortcut icon' type='image/jpg' href='static/logo.jpg'/>
-        <meta name='author' content='GKZY'>
-        <meta name='description' content='info and background about myself'/>
-        <meta name='keywords' content='GKZY, portfolio, python, javascript, renpy, automation, snake, programming, about'>
-        <meta name='robots' content=', follow'>
+        <link rel="stylesheet" type="text/css" href='style/style.css'>
+        <link rel="shortcut icon" type="image/jpg" href="static/VFigure.jpg"/>
+        <meta name="author" content="Gareth">
+        <meta name="description" content="I have not posted my projects on GITHUB yet">
+        <meta name="keywords" content='GKZY, portfolio, python, javascript, renpy, automation, snake, programming, about'>
+        <meta name="robots" content= ", follow">
         <script src='https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js'></script>
-        <script src='script/contact.js'></script>
-        <script src='script/preloader.js'></script>
-        <script src='script/scrolling.js'></script>
-        <script async src='https://www.googletagmanager.com/gtag/js?id=G-H6ST10QSZH'></script>
+        <script src="script/preloader.js"></script>
+        <script src="script/scrolling.js"></script>
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-H6ST10QSZH"></script>
         <script>
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
 
             gtag('config', 'G-H6ST10QSZH');
-            window.onbeforeunload = function(){
-                window.scrollTo(0,0);
+            window.onbeforeunload = function () {
+                window.scrollTo(0, 0);
             }
+
             $(window).on('load', async function(){
                 disableScroll();
                 await move('loader');
-                let date = new Date();
-                let year = date.getFullYear();
-                let age = (year) - 2004;
-
-                document.getElementById('age').innerText = age;
                 $(".loader-wrapper").fadeOut('slow');
+            });
+
+            $(window).click( async function() {
                 enableScroll();
+                $('#clickToContinue').fadeOut('fast');
             });
         </script>
-        <title>About</title>
+        <title>Projects</title>
         <style>
-            input[type=text], select, textarea{
-                width: 100%;
-                padding: 12px;
-                border: 1px solid #ccc;
-                border-radius: 4px;
-                box-sizing: border-box;
-                margin-top: 6px;
-                margin-bottom: 16px;
-                resize: vertical;
-                background-color: #f1f1f1;
+            #clickToContinue{
+                display:flex;
+                position:fixed;
+                background-color:#1257A6;
+                color:#fafafa;
+                width:100%;
+                height:100%;
+                z-index:3;
+                opacity:0.95;
+                margin: 0 auto;
+            }
+            #click-text{
+                top:40%;
+                left:50%;
+                transform: translate(-50%, -50%);
+                font-family:'Default_SC';
+                font-size:40px;
+                position:absolute;
             }
 
-            input[type=submit]{
-                background-color: #1313F6;
-                color: black;
-                padding: 12px 20px;
-                border: none;
-                border-radius: 4px;
-                cursor: pointer;
-            }
-
-            input[type=submit]:hover{
-                background-color: #0D0DAF;
-            }
-
-            input{
-                font-family: 'montserrat';
-            }
-
-            .container{
-                color: #ccc;
-                font-family: 'montserrat';
-            }
-
-            .card{
-                line-height:15px;
+            .project-box {
+                position:relative;
+                width:470px;
+                margin: 0 auto;
+                border: 2px solid #fafafa;
+                border-radius:5px;
+                color:#fafafa;
+                background-color: #0B335A;
                 padding-left:15px;
-                width:80%;
+                padding-right:15px;
             }
 
-            #pfp{
-                width:300px;
-                border:3px solid #fafafa;
-                border-radius:20px;
+            .project-section{
+                display: grid;
+                grid-column: 2;
+                grid-template-columns: 1fr 1fr;
+                row-gap:50px;
+                margin: auto;
+                width:90%;
             }
 
-            @media screen and (max-width: 700px){
-                .card{
-                    width:95%;
-                }
-                #pfp{
-                    width:280px;
+            .project-icon{
+                width:450px; 
+                position:relative;
+                border-radius:10px;
+                overflow: hidden; 
+                display:block;
+                margin:auto;
+            }
+            .project-description{
+                width:100%;
+                padding-left:10px;
+            }
+
+            #tags{
+                position: absolute;
+                bottom:5px;
+                height:25px;
+                padding-left:10px;
+            }
+
+            .tag{
+                font-size:12px;
+                border:solid 2px #fafafa;
+                padding:5px;
+                border-radius:10px;
+            }
+
+            .tag:hover{
+                background-color:#25edf4;
+                transition: all 0.25s ease-in-out;
+            }
+
+            @media screen and (max-width: 800px) {
+                .project-section {
+                    grid-template-columns: 1fr;
                 }
             }
         </style>
     </head>
-    <body>
+    <body oncontextmenu="return false;">
+        <div id='clickToContinue'>
+            <div id='click-text'>Click here to continue</div>
+        </div>
         <ul class="box-area">
             <li></li>
             <li></li>
@@ -105,102 +131,126 @@
                 <li><a href='./index.html'>Home</a></li>
                 <li><a href='./about.html'>About</a></li>
                 <li><a href='./skills.html'>Skills</a></li>
-                <li><a href='./project.html'>Project</a></li>
+                <li><a href class='active'>Projects</a></li>
             </ul>
         </nav>
-        <br><br>
-        <div class='card' style='padding-left:60px'>
-            <img src='static/VFigure.jpg' id='pfp'>
-            <h1>I'm Gareth. How are you? </h1>
-            <br>
-            <p style='font-family: montserrat;;'>
-                I am <span id='age'></span> and I am a college student based in Asia. 
-                I speak fluent English and Mandarin and have a passion for <b style="font-family: Montserrat-Bold;">Computer Science.</b>
-                I am currently in college studying the following <b style="font-family: Montserrat-Bold;">A-Level subjects:</b> 
+        <h3 style="text-align:center">My Projects</h3>
+        <div class='project-section'>
+            <div class="project-box">
+                <h4>Motion Detection Camera</h4>
+                <a href="https://github.com/GarethSRGKZY/Motion-detection-camera" target="blank">
+                    <video onmouseover="this.play()" onmouseout="this.pause();this.currentTime=0;" class="project-icon">
+                        <source src='static/video/Camera.mov'>
+                    </video>
+                </a>
+                <p class='project-description'>
+                    My first ever computer vision project as I wanted to learn more about it. Any motion detected will
+                    signal a sound along with a green box around it.
+                </p>
                 <br><br>
-                - Mathematics
-                <br>
-                - Further Mathematics
-                <br>
-                - Computer Science
-                <br>
-                - Physics
-                <br><br>
-                I also co-founded a project called the "serving bot" for my school's cafeteria. Unfortunately, after meeting
-                with the cafeteria's management halfway through our project, we could not implement our bot in the cafe.
-                <br><br>
-                <h2>Hobbies:</h2>
-                <br>
-                Here are some of my hobbies that I do for my free time:
-                <br><br>
-                - Programming
-                <br>
-                - Playing video games
-                <br>
-                - Playing violin and producing music
-                <br>
-                - Drawing
-                <br><br>
-                <h2>Music:</h2>
-                I played the violin since 2012. I produce
-                music and instrumentals from the various genre of songs I listen to such as
-                rap, acoustic, J-pop and J-rock by using GarageBand iOS.
-                <br><br> 
-                There are many artists and songs that I love listening to. Listed below are 5 selections of my songs:
-                <br><br>
-                - "Weight of the World" by Keiichi Okabe
-                <br>
-                - "Ashes of Dreams" by Square Enix Music
-                <br>
-                - "Time" by NF
-                <br>
-                - "失恋ソング沢山聴いて 泣いてばかりの私はもう" by Riria
-                <br>
-                - "Oshakashama" by Radwimps
-                <br><br>
-                <h2>Games:</h2>
-                Here are the list of games that I have played:
-                <br>
-                - NieR Replicant ver 1.22474487139...
-                <br>
-                - NieR Automata
-                <br>
-                - Efootball (PES was its former name)
-                <br>
-                - Genshin Impact
-                <br>
-                - Dream League Soccer
-                <br>
-                - Chess
-                <br>
-                - (Many more games but this will do.)
-                <br><br>
-                *You can judge my taste in games if you want
-                <br><br>
-                <h2>Feel free to contact me:</h2>
-                <div class="container" style="width:80%; position:absolute;">
-                <form action="https://formspree.io/f/mnqwnroo" method="POST">
-                    
-                <label for="name">Name<span style='color:red'>*</span></label>
-                <input type="text" name="name" class="name" placeholder="Name">
-                
-                <label for="Email">Email<span style='color:red'>*</span></label>
-                <input type="text" name="Email" class="Email" placeholder="Email">
+                <div id='tags'>
+                    <span class='tag'>Python</span>
+                    <span class='tag'>OpenCV</span>
+                </div>
+            </div>
 
-                <label for="subject">Subject<span style='color:red'></span></label>
-                <input type="text" name="subject" class="subject" placeholder="Subject">
-
-                <label for="Message">Message for Gareth<span style='color:red'>*</label>
-                <textarea type='text' name='Message' class="Message" placeholder="Write something..." style="height:200px;font-family:montserrat"></textarea>
-
-                <input type="submit" value="Submit" class="submit" style='color:white;'>
+            <div class="project-box">
+                <h4>"GAI"</h4>
+                    <video onmouseover="this.play()" onmouseout="this.pause();this.currentTime=0;" class="project-icon">
+                        <source src='static/video/AI.mov'>
+                    </video>
+                </a>
+                <p class='project-description'>
+                    Inspired by Iron Man's Jarvis or Friday, I decided to code something similar and called it GAI(Gareth's Artificial Intelligence).
+                    This AI can recognise voices from people and perform limited functions compared 
+                    to other AI: Opening applications, search information and send messages to people on different 
+                    platforms such as Gmail or WhatsApp. I am currently updating this project to hopefully perform more functions in the future.
+                </p>
                 <br><br>
-                <div class='status' style='color:red;font-size:smaller'></div>
-                </form>
-                </div>         
-            </p>
+                <div id='tags'>
+                    <span class='tag'>Python</span>
+                </div>
+            </div>
+            
+            <div class="project-box">
+                <h4>Ball game</h4>
+                    <video onmouseover="this.play()" onmouseout="this.pause();this.currentTime=0;" class="project-icon">
+                        <source src='static/video/Ball.mov'>
+                    </video>
+                </a>
+                <p class='project-description'>
+                    This was my first ever game that I have created in Unity. The main objective
+                    is to get to the targeted area. The camera seems alright
+                    until you start to rotate which increases the game's difficulty. The input will
+                    stick to its original output instead of changing according to the camera. If I
+                    succeeded in passing this level, I could at least say I successfully developed a
+                    mini-game.
+                </p>
+                <br><br>
+                <div id='tags'>
+                    <span class='tag'>Unity</span>
+                    <span class='tag'>C#</span>
+                </div>
+            </div>
+
+            <div class="project-box">
+                <h4>A bugged wordle</h4>
+                    <video onmouseover="this.play()" onmouseout="this.pause();this.currentTime=0;"class="project-icon">
+                         <source src="static/video/wordle.mov">
+                    </video>
+                </a>
+                <p class="project-description">
+                    Ever since the wordle craze started, I played wordle for a while and got hooked onto it a few days later.
+                    It was around 1-2 months later that I decided to make a wordle. This wordle uses pygame for the GUI and
+                    functions. Unfortunately, there are a few problems with this wordle. After the first word is inputted,
+                    the next word that will be typed overlaps the inital word. Next is the backspace where you cannot undo
+                    the word you typed. Some people may say that this is not a bug, it's a feature. (A not so funny joke)
+                </p>
+                <br><br>
+                <div id = 'tags'>
+                    <span class="tag">Pygame</span>
+                    <span class="tag">Python</span>
+                </div>
+            </div>
+
+            <div class="project-box">
+                <h4>Kara No Kyoukai fan game</h4>
+                    <video onmouseover="this.play()" onmouseout="this.pause();this.currentTime=0;" class="project-icon">
+                        <source src='static/video/KNKFuukanFuukei.mov'>
+                    </video>
+                </a>
+                <p class='project-description'>
+                    This was created using Ren'py which is written in Python's programming language. 
+                    I wanted to recreate this story into a visual novel format since the official 
+                    company did not create a VN (Visual Novel) for this story. 
+                    The whole story is still a work in progress.
+                </p>
+                <br><br>
+                <div id='tags'>
+                    <span class='tag'>Ren'py</span>
+                </div>
+            </div>
+
+            <div class="project-box">
+                <h4>Custom Browser</h4>
+                <a href="https://github.com/GarethSRGKZY/Custom-browser" target="blank">
+                    <video onmouseover="this.play()" onmouseout="this.pause();this.currentTime=0;" class="project-icon">
+                        <source src='static/video/browser.mov'>
+                    </video>
+                </a>
+                <p class='project-description'>
+                    I have made this browser for a fun project. There's actually nothing special about it other than it
+                    being a browser that looks like its outdated. Though the project is successful, there are flaws about
+                    the browser other than its design such as the search bar on top. The search bar only reads links and not
+                    the inputed text.
+                </p>
+                <br><br>
+                <div id='tags'>
+                    <span class='tag'>Python</span>
+                    <span class='tag'>PyQt5</span>
+                </div>
+            </div>
         </div>
-        <br>
         <div class="loader-wrapper">
             <img src='static/VFigure.jpg' class='loader-image'>
             <span class="loader"><span class="loader-inner" id='loader'></span></span>
