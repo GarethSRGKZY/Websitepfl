@@ -145,7 +145,7 @@ function draw(){
     textSize(width/30*font_scale);
     text('Welcome to this portfolio website\n by Gareth.', width/2, height/2-50);
     textSize(width/70*font_scale);
-    text('Keep yourself entertained with this snake game.', width/2, height/2+50);
+    text('Keep yourself entertained with this snake game.\n This website is not mobile compatible.', width/2, height/2+50);
 
     if(display_hidden_text){
         textSize(width/70*font_scale);
